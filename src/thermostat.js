@@ -4,10 +4,9 @@ class Thermostat {
     this.default = 20;
     this.temperature = this.default;
   }
-
-
-  // default() {
-  //   return ;
-  // }
+  up() {
+    this.temperature++;
+    return this.temperature;
+  }
 }
 
