@@ -1,7 +1,13 @@
 class Thermostat {
 
-  default() {
-    return 20;
+  constructor() {
+    this.default = 20;
+    this.temperature = this.default;
   }
+
+
+  // default() {
+  //   return ;
+  // }
 }
 
