@@ -8,5 +8,10 @@ class Thermostat {
     this.temperature++;
     return this.temperature;
   }
+
+  down() {
+    this.temperature--;
+    return this.temperature;
+  }
 }
 
