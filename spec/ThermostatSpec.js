@@ -26,6 +26,21 @@ describe('Thermostat', function() {
   describe('setting a minimum temperature', function() {
     it('has a minimum temperature of 10 degrees', function() {
       expect(thermostat.minimumTemp).toEqual(10);
+    });
+    
+    it('throws an error if temperature falls below 10 degrees', function() {
+      thermostat.down()
+      thermostat.down()
+      thermostat.down()
+      thermostat.down()
+      thermostat.down()
+      thermostat.down()
+      thermostat.down()
+      thermostat.down()
+      thermostat.down()
+      thermostat.down()
+      thermostat.down()
+      expect(function() { thermostat.down(); }).toThrow(Error("Minimum temperature exceeded"))
     })
-  })
+  });
 });
