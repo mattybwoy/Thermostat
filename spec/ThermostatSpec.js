@@ -43,20 +43,19 @@ describe('Thermostat', function() {
       expect(function() { thermostat.down(); }).toThrow(Error("Minimum temperature exceeded"));
     });
   });
-  describe('setting a maximum temperature', function () {
-    it('throws error if maximum temperature exceeded 25 degrees in power saver mode', function () {
-            //thermostat.powerSaver
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-    expect(function () { thermostat.up(); }).toThrow(Error("Maximum temperature exceeded"));
-    });
 
-    xit('increases maximum temperature to 32', function () {
-      thermostat.powerSaverOff();
+  describe('setting a maximum temperature', function () {
+    it('throws error if maximum temperature exceeds 25 degrees in power saver mode', function () {
+            thermostat.up()
+            thermostat.up()
+            thermostat.up()
+            thermostat.up()
+            thermostat.up()
+            thermostat.up()
+    expect(function () { thermostat.up(); }).toThrow(Error("Maximum temperature exceeded!"));
+    });
+    it('throws error if maximum temperature exceeds 32 degrees in normal mode', function () {
+            thermostat.powerSaverOff();
             thermostat.up()
             thermostat.up()
             thermostat.up()
@@ -69,9 +68,11 @@ describe('Thermostat', function() {
             thermostat.up()
             thermostat.up()
             thermostat.up()
-      expect(thermostat.maximumTemp2).toEqual(32);
+            thermostat.up()
+      expect(function () { thermostat.up(); }).toThrow(Error("Maximum temperature exceeded!!"));
     });
   });
+
   describe('power saving', function () {
     it('turns power saving off', function (){
       expect(thermostat.powerSaverOff()).toBe(false);
