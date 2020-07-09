@@ -29,46 +29,25 @@ describe('Thermostat', function() {
     });
     
     it('throws an error if temperature falls below 10 degrees', function() {
-      thermostat.down()
-      thermostat.down()
-      thermostat.down()
-      thermostat.down()
-      thermostat.down()
-      thermostat.down()
-      thermostat.down()
-      thermostat.down()
-      thermostat.down()
-      thermostat.down()
-      thermostat.down()
+      for (var i = 0; i < 10; i++) {        
+        thermostat.down();      
+      }
       expect(function() { thermostat.down(); }).toThrow(Error("Minimum temperature exceeded"));
     });
   });
 
   describe('setting a maximum temperature', function () {
     it('throws error if maximum temperature exceeds 25 degrees in power saver mode', function () {
-            //thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
+      for (var i = 0; i < 5; i++) {
+        thermostat.up();
+      }
     expect(function () { thermostat.up(); }).toThrow(Error("Maximum temperature exceeded!"));
     });
     it('throws error if maximum temperature exceeds 32 degrees in normal mode', function () {
             thermostat.powerSaverOff();
-            //thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
-            thermostat.up()
+            for (var i = 0; i < 12; i++) {
+              thermostat.up();
+            }
       expect(function () { thermostat.up(); }).toThrow(Error("Maximum temperature exceeded!!"));
     });
   });
@@ -76,6 +55,13 @@ describe('Thermostat', function() {
   describe('power saving', function () {
     it('turns power saving off', function (){
       expect(thermostat.powerSaverOff()).toBe(false);
+    });
+  });
+  describe('reset', function () {
+    it('resets temperature to default', function () {
+      thermostat.up();
+      thermostat.reset();
+      expect(thermostat.temperature).toEqual(20);
     });
   });
 });

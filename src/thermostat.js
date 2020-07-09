@@ -17,7 +17,7 @@ class Thermostat {
   };
 
   down() {
-    if (this.minimumTemp > this.temperature) {throw new Error("Minimum temperature exceeded");}
+    if (this.minimumTemp >= this.temperature) {throw new Error("Minimum temperature exceeded");}
     this.temperature--;
     return this.temperature;
   };
@@ -25,6 +25,9 @@ class Thermostat {
   powerSaverOff() {
     this.maximumTemp = 32
     return this.powerSaver = false 
-    
-  }; 
+  };
+
+  reset() {
+    this.temperature = this.default;
+  };
 }
