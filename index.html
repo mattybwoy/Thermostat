@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="styles/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <script src="src/thermostat.js"></script>
+  <title> WELCOME TO MR THERMOSTAT </title>
+
+  <script type="text/javascript">
+    function picture() {
+      var pic =
+        "https://media3.giphy.com/media/rQ9ep0stA0oRG/giphy.gif?cid=ecf05e4702effe41b5bc778da8ae819d1bf820a6e408e90c&rid=giphy.gif"
+      document.getElementById('chicken').style.display = 'block';
+    }
+  </script>
+  <style>
+    a.test {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<section>
+
+  <header> 
+    <h1 class="rainbow-text">WELCOME TO MR THERMOSTAT</h1>
+  </header>
+
+  <nav>
+    <button name="temp_up">Turn up the HEAT!</button>
+    <br><button name="temp_down">Turn it down!!!</button>
+    <br><button name="reset">Reset</button>
+    <!-- <br><button name="pwr_saving" onclick="picture()">Save the planet</button> -->
+    <br>Power Saving Mode <label class="switch">
+      <input type="checkbox" name="pwr_saving" onclick="picture()">
+      <span class="slider round"></span>
+    </label>
+  </nav>
+
+  <body>
+
+    <a href="http://jquery.com/">jQuery</a>
+    <script src="jquery.js"></script>
+
+    <script>
+      $("a").addClass("test");
+      window.onload = function () {
+        alert("welcome");
+      };
+
+      $(document).ready(function () {
+
+        $("a").click(function (event) {
+
+          alert("As you can see, the link no longer took you to jquery.com");
+          event.preventDefault();
+
+        });
+
+      });
+      $("a").click(function (event) {
+
+        event.preventDefault();
+
+        $(this).hide("slow");
+
+      });
+    </script>
+
+
+
+
+    <div id="temperature"></div>
+
+    <br>temperature display (ideas: FLASHING EVERYWHERE, change the colour of the page based on the temp, CRAZY GIFS)
+    usage indicator
+    up button
+    down button
+    reset
+    power saving on/off
+
+    <img id="chicken"
+      src="https://media3.giphy.com/media/rQ9ep0stA0oRG/giphy.gif?cid=ecf05e4702effe41b5bc778da8ae819d1bf820a6e408e90c&rid=giphy.gif"
+      style="display:none;" />
+
+  </body>
+
+</section>
+<footer>
+
+</footer>
+
+</html>
