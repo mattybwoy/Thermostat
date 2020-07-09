@@ -64,4 +64,22 @@ describe('Thermostat', function() {
       expect(thermostat.temperature).toEqual(20);
     });
   });
+  describe('current usage', function () {
+    it('displays the low current usage', function () {
+      for (var i = 0; i < 3; i++) {
+        thermostat.down();
+      }
+      expect(thermostat.currentUsage()).toEqual('low-usage');
+    });
+    it('displays the medium current usage', function () {
+      expect(thermostat.currentUsage()).toEqual('medium-usage');
+    });
+      it('displays the high current usage', function () {
+        thermostat.powerSaverOff();
+        for (var i = 0; i < 6; i++) {
+          thermostat.up();
+        }
+        expect(thermostat.currentUsage()).toEqual('high-usage');
+      });
+  });
 });
