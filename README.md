@@ -21,6 +21,13 @@
 - Minimum temperature set to 10 and test confirmed operational.
 - Power saving functionality is now defaulted to on, test for maximum temperature in power saver mode is confirmed operational with error message displayed.
 - Normal mode functionality confirmed to be working, test for maximum temperature not currently operational as error message not displayed.
+- Error message fixed for maximum temperatures.
+- Current usage functionality and reset function added along with passing tests accordingly.
+- HTML and CSS files added for user interface.
+
+## Improvements
+- Complete JQuery styling for page
+- Connect interface with javascript file
 
 ## Installation
 
@@ -33,8 +40,9 @@ To get up and running follow below steps
 ```bash
 
 open SpecRunner.html
+open index.html
 
 ```
 
 ### Collaborators
-Dhara-95
+Mattybwoy, Dhara-95, JoshuaNg2332, indisaurusrex
