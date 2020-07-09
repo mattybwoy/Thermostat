@@ -13,6 +13,7 @@ header {
 .rainbow-text {
   background-image: linear-gradient(to left, blue, rgb(0, 183, 255), yellow, orange, red);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 /* Create two columns/boxes that floats next to each other */
@@ -127,3 +128,19 @@ input:checked+.slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.button {
+  background-color: #00000017;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  font-family: "OriginalFont";
+  }

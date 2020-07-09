@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <script src="src/thermostat.js"></script>
-  <title> WELCOME TO MR THERMOSTAT </title>
+  <title> MR THERMOSTAT </title>
 
   <script type="text/javascript">
     function picture() {
@@ -15,11 +15,13 @@
       document.getElementById('chicken').style.display = 'block';
     }
   </script>
+
   <style>
     a.test {
-      font-weight: bold;
+      font-weight: 'Press Start 2P';
     }
   </style>
+  
 </head>
 
 <section>
@@ -28,10 +30,17 @@
     <h1 class="rainbow-text">WELCOME TO MR THERMOSTAT</h1>
   </header>
 
+  <style>
+    input[type=button] {
+      font-family: monospace;
+    }
+  </style>
+
   <nav>
-    <button name="temp_up">Turn up the HEAT!</button>
-    <br><button name="temp_down">Turn it down!!!</button>
-    <br><button name="reset">Reset</button>
+    Temperature <button name="temp_up">Up</button>  <button name="temp_down">Down</button>
+
+     <!-- <br>Temperature <button name="temp_down">Down</button> -->
+    <br>RESET<button name="reset">Reset</button>
     <!-- <br><button name="pwr_saving" onclick="picture()">Save the planet</button> -->
     <br>Power Saving Mode <label class="switch">
       <input type="checkbox" name="pwr_saving" onclick="picture()">
