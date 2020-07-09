@@ -46,7 +46,7 @@ describe('Thermostat', function() {
 
   describe('setting a maximum temperature', function () {
     it('throws error if maximum temperature exceeds 25 degrees in power saver mode', function () {
-            thermostat.up()
+            //thermostat.up()
             thermostat.up()
             thermostat.up()
             thermostat.up()
@@ -56,7 +56,7 @@ describe('Thermostat', function() {
     });
     it('throws error if maximum temperature exceeds 32 degrees in normal mode', function () {
             thermostat.powerSaverOff();
-            thermostat.up()
+            //thermostat.up()
             thermostat.up()
             thermostat.up()
             thermostat.up()

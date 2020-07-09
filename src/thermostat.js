@@ -4,13 +4,14 @@ class Thermostat {
     this.default = 20;
     this.temperature = this.default;
     this.minimumTemp = 10;
-    this.powerSaver = true ? this.maximumTemp = 25 : this.maximumTemp = 32
+    this.powerSaver = true;
+    this.maximumTemp = 25  
   };
 
   up() {
-    if (this.powerSaver = false && this.maximumTemp < this.temperature) {throw new Error("Maximum temperature exceeded!!");}
+    if (this.powerSaver == false && this.maximumTemp <= this.temperature) {throw new Error("Maximum temperature exceeded!!");}
     // if (this.powerSaverOff() && this.maximumTemp < this.temperature) {throw new Error("Maximum temperature exceeded!!");}
-    else if (this.powerSaver = true && this.maximumTemp < this.temperature) {throw new Error("Maximum temperature exceeded!");}
+    if (this.powerSaver == true && this.maximumTemp <= this.temperature) {throw new Error("Maximum temperature exceeded!");}
     this.temperature++;
     return this.temperature;
   };
@@ -22,6 +23,8 @@ class Thermostat {
   };
 
   powerSaverOff() {
-    return this.powerSaver = false
+    this.maximumTemp = 32
+    return this.powerSaver = false 
+    
   }; 
 }
