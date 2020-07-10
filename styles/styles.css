@@ -89,7 +89,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(167, 14, 14);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -101,7 +101,7 @@ footer {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: rgb(2, 0, 0);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -126,21 +126,37 @@ input:checked+.slider:before {
 }
 
 .slider.round:before {
-  border-radius: 50%;
+  border-radius: 60%;
 }
 
-.button {
-  background-color: #00000017;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
+button {
   display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
+  border: none;
+  padding: 1rem 1rem;
+  margin: 5;
+  text-decoration: none;
+  background: #0c0c0c;
+  color: #ffffff;
   font-family: inherit;
-  font-size: 1em;
-  font-family: "OriginalFont";
-  }
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,
+    transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #0053ba;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
