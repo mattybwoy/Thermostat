@@ -24,10 +24,12 @@
 - Error message fixed for maximum temperatures.
 - Current usage functionality and reset function added along with passing tests accordingly.
 - HTML and CSS files added for user interface.
+- Connected interface with thermostat javascript file.
+- Implemented power saving mode on/off function.
 
 ## Improvements
 - Complete JQuery styling for page
-- Connect interface with javascript file
+- API calls
 
 ## Installation
 
