@@ -47,4 +47,5 @@ open index.html
 ```
 
 ### Collaborators
-Mattybwoy, Dhara-95, JoshuaNg2332, indisaurusrex
+Mattybwoy, Dhara-95, JoshuaNg2332, indisaurusrex, jamesAforster
+

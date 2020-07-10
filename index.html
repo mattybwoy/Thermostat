@@ -67,21 +67,34 @@ CURRENT TEMPERATURE
         $('#temperature').text(thermo.temperature);
         $('#temp_up').on('click', function () {
           thermo.up();
-          $('#temperature').text(thermo.temperature);});
+          $('#temperature').text(thermo.temperature);
+          updateTemperature();
+          });
           $('#temp_down').on('click', function () {
           thermo.down();
           $('#temperature').text(thermo.temperature);
-        });
+          updateTemperature();
+          });
           $('#reset').on('click', function () {
           thermo.reset();
           $('#temperature').text(thermo.temperature);
-        });
+          updateTemperature();
+          });
           $('#power_saving').on('click', function () {
           thermo.powerSaverSwitch();
           $('#power_saving').text('false')
           $('#temperature').text(thermo.temperature);
         });
-
+        function updateTemperature() {
+          $('#temperature').text(thermo.temperature);
+          if (thermo.currentUsage() === 'low-usage') {
+            $('#temperature').css('color', 'blue')
+          } else if (thermo.currentUsage() === 'medium-usage') {
+            $('#temperature').css('color', 'black')
+          } else {
+            $('#temperature').css('color', 'red')
+          }
+        }
 
         $("a").click(function (event) {
 
