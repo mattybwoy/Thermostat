@@ -21,9 +21,15 @@ class Thermostat {
     return this.temperature;
   };
 
-  powerSaverOff() {
-    this.maximumTemp = 32
-    return this.powerSaver = false 
+  powerSaverSwitch() {
+    if (this.powerSaver == true) {
+      this.powerSaver = false 
+      this.maximumTemp = 32
+      return this.powerSaver = false
+    }
+    else {this.powerSaver = true
+    this.maximumTemp = 25
+    return this.powerSaver = true}
   };
 
   reset() {

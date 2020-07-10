@@ -6,14 +6,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <script src="src/thermostat.js"></script>
+  <!-- <script src="src/interface.js"></script> -->
   <title> MR THERMOSTAT </title>
-
   <script type="text/javascript">
     function picture() {
       var pic =
         "https://media3.giphy.com/media/rQ9ep0stA0oRG/giphy.gif?cid=ecf05e4702effe41b5bc778da8ae819d1bf820a6e408e90c&rid=giphy.gif"
       document.getElementById('chicken').style.display = 'block';
     }
+    
   </script>
 
   <style>
@@ -37,13 +38,11 @@
   </style>
 
   <nav>
-    Temperature <button name="temp_up">Up</button>  <button name="temp_down">Down</button>
+    Temperature <button id="temp_up">Up</button> <button id="temp_down">Down</button>
+    <br>RESET<button id="reset">Reset</button>
 
-     <!-- <br>Temperature <button name="temp_down">Down</button> -->
-    <br>RESET<button name="reset">Reset</button>
-    <!-- <br><button name="pwr_saving" onclick="picture()">Save the planet</button> -->
     <br>Power Saving Mode <label class="switch">
-      <input type="checkbox" name="pwr_saving" onclick="picture()">
+      <input type="checkbox" id="power_saving" onclick="picture()">
       <span class="slider round"></span>
     </label>
   </nav>
@@ -56,10 +55,29 @@
     <script>
       $("a").addClass("test");
       window.onload = function () {
-        alert("welcome");
+        alert("Welcome to Mr Thermostat");
       };
 
       $(document).ready(function () {
+        thermo = new Thermostat();
+        $('#temperature').text(thermo.temperature);
+        $('#temp_up').on('click', function () {
+          thermo.up();
+          $('#temperature').text(thermo.temperature);});
+          $('#temp_down').on('click', function () {
+          thermo.down();
+          $('#temperature').text(thermo.temperature);
+        });
+          $('#reset').on('click', function () {
+          thermo.reset();
+          $('#temperature').text(thermo.temperature);
+        });
+          $('#power_saving').on('click', function () {
+          thermo.powerSaverSwitch();
+          $('#power_saving').text('false')
+          $('#temperature').text(thermo.temperature);
+        });
+
 
         $("a").click(function (event) {
 
@@ -78,11 +96,7 @@
       });
     </script>
 
-
-
-
-    <div id="temperature"></div>
-
+    <h1 id="temperature"></h1>
     <br>temperature display (ideas: FLASHING EVERYWHERE, change the colour of the page based on the temp, CRAZY GIFS)
     usage indicator
     up button

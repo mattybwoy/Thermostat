@@ -44,7 +44,7 @@ describe('Thermostat', function() {
     expect(function () { thermostat.up(); }).toThrow(Error("Maximum temperature exceeded!"));
     });
     it('throws error if maximum temperature exceeds 32 degrees in normal mode', function () {
-            thermostat.powerSaverOff();
+            thermostat.powerSaverSwitch();
             for (var i = 0; i < 12; i++) {
               thermostat.up();
             }
@@ -54,7 +54,7 @@ describe('Thermostat', function() {
 
   describe('power saving', function () {
     it('turns power saving off', function (){
-      expect(thermostat.powerSaverOff()).toBe(false);
+      expect(thermostat.powerSaverSwitch()).toBe(false);
     });
   });
   describe('reset', function () {
@@ -75,7 +75,7 @@ describe('Thermostat', function() {
       expect(thermostat.currentUsage()).toEqual('medium-usage');
     });
       it('displays the high current usage', function () {
-        thermostat.powerSaverOff();
+        thermostat.powerSaverSwitch();
         for (var i = 0; i < 6; i++) {
           thermostat.up();
         }
